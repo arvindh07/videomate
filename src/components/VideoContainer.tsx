@@ -1,6 +1,6 @@
 const VideoContainer = () => {
   return (
-    <div className="col-span-11">VideoContainer</div>
+    <div className="">VideoContainer</div>
   )
 }
 

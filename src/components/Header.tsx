@@ -13,7 +13,7 @@ const Header = () => {
     }
 
     return (
-        <div className="shadow-xl grid grid-flow-col px-4 py-3 items-center">
+        <div className="shadow-md grid grid-flow-col px-4 py-3 items-center">
             <div className="flex col-span-1 items-center gap-x-6">
                 <RxHamburgerMenu className="text-xl cursor-pointer" onClick={handleToggleMenu} />
                 <div className="flex items-center justify-center text-red-500 text-lg gap-x-1 cursor-pointer">
