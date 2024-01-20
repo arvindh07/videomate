@@ -1,11 +1,31 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Body from "./components/Body"
 import Header from "./components/Header"
+import VideoContainer from "./components/VideoContainer";
+import WatchVideo from "./components/WatchVideo";
+
+const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element: <Body />,
+    children: [
+      {
+        path: "/",
+        element: <VideoContainer />
+      },
+      {
+        path: "/watch",
+        element: <WatchVideo />
+      }
+    ]
+  }
+]);
 
 function App() {
   return (
     <>
       <Header />
-      <Body />
+      <RouterProvider router={appRouter} />
       {/* 
         Header
           logo

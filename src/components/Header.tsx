@@ -16,10 +16,12 @@ const Header = () => {
         <div className="shadow-md grid grid-flow-col px-4 py-3 items-center">
             <div className="flex col-span-1 items-center gap-x-6">
                 <RxHamburgerMenu className="text-xl cursor-pointer" onClick={handleToggleMenu} />
-                <div className="flex items-center justify-center text-red-500 text-lg gap-x-1 cursor-pointer">
-                    <RiVideoFill />
-                    <span className="text-xl">VideoMate</span>
-                </div>
+                <a onClick={() => window.location.href="/"}>
+                    <div className="flex items-center justify-center text-red-500 text-lg gap-x-1 cursor-pointer">
+                        <RiVideoFill />
+                        <span className="text-xl">VideoMate</span>
+                    </div>
+                </a>
             </div>
             <div className="col-span-10 flex items-center justify-center">
                 <input
@@ -30,9 +32,9 @@ const Header = () => {
                     <IoSearchSharp className="rounded-e-full text-xl" />
                 </div>
             </div>
-            <div className="col-span-1 flex text-2xl gap-x-3">
-                <RiSettings3Fill />
-                <HiMiniUserCircle />
+            <div className="col-span-1 flex text-2xl gap-x-6">
+                <RiSettings3Fill className="cursor-pointer"/>
+                <HiMiniUserCircle className="cursor-pointer"/>
             </div>
         </div>
     )
