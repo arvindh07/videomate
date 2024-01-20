@@ -4,7 +4,7 @@ import VideoContainer from "./VideoContainer"
 
 const Body = () => {
   return (
-    <div>
+    <div className="grid grid-flow-col">
         <Sidebar />
         <VideoContainer />
     </div>
