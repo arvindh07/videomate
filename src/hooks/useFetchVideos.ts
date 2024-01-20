@@ -1,13 +1,17 @@
 import { useEffect } from "react";
 import { CHANNEL_URL, YOUTUBE_URL } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { videoActions } from "../store/slices/videoSlice";
+import { StoreType } from "../store/store";
 
 const useFetchVideos = () => {
     const dispatch = useDispatch();
+    const homeVideos = useSelector((store: StoreType) => store?.video?.homeVideos);
 
     useEffect(() => {
-        fetchVideos();
+        if(!homeVideos){
+            fetchVideos();
+        }
     }, [])
 
     const fetchVideos = async () => {
