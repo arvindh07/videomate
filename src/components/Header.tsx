@@ -9,12 +9,14 @@ import { useEffect, useState } from "react";
 import { YT_SEARCH } from "../utils/constants";
 import { StoreType } from "../store/store";
 import { searchActions } from "../store/slices/cacheSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const [searchText, setSearchText] = useState<string>("");
     const [suggestions, setSuggestions] = useState<Array<string>>([]);
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
     const cacheResults: any = useSelector((store: StoreType) => store.cache);
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -56,11 +58,14 @@ const Header = () => {
                 <div className="flex w-full justify-center items-center">
                     <input
                         type="text"
+                        value={searchText}
                         className="border-y-2 border-l-2 border-gray-200 px-10 py-2 w-4/6 rounded-s-full"
                         placeholder="Search"
                         onChange={(e) => setSearchText(e.target.value)}
                         onFocus={() => setShowSuggestions(true)}
-                        onBlur={() => setShowSuggestions(false)}
+                        onBlur={() => {
+                            // setShowSuggestions(false)
+                        }}
                     />
                     <div className="bg-gray-300 px-5 py-3 rounded-e-full cursor-pointer hover:bg-gray-200 transition-all">
                         <IoSearchSharp className="rounded-e-full text-xl" />
@@ -69,9 +74,16 @@ const Header = () => {
                 {showSuggestions && suggestions?.length > 0 && <div className="fixed top-14 w-[47%] flex mt-[1px] -ml-14">
                     <ul className="py-2 bg-white w-full border border-gray-200 rounded-lg">
                         {suggestions?.map((li) => (
-                            <div className="flex items-center px-4 py-2 gap-x-2 hover:bg-black/20 transition">
+                            <div
+                                key={li}
+                                onClick={() => {
+                                    setShowSuggestions(false);
+                                    setSearchText(li);
+                                    navigate("/results?search_query=" + li);
+                                }} 
+                                className="flex items-center px-4 py-2 gap-x-2 hover:bg-black/20 transition">
                                 <IoSearchSharp className="rounded-e-full text-xl" />
-                                <li className="" key={li}>{li}</li>
+                                <li>{li}</li>
                             </div>
                         ))}
                     </ul>
