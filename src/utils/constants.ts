@@ -2,6 +2,6 @@ export const YOUTUBE_URL = "https://youtube.googleapis.com/youtube/v3/videos?par
 
 export const CHANNEL_URL = "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics";
 
-// export const YT_SEARCH = "http://suggestqueries.google.com/complete/search?ds=yt&q=";
 export const YT_SEARCH = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
-// jaz&callback=google.sbox.p50&gs_gbg=0l0MjG05RWnWBe9WcipQbsy
+
+export const SEARCH_VIDEOS = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=";
