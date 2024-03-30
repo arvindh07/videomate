@@ -44,7 +44,7 @@ const Header = () => {
     }, [searchText])
 
     return (
-        <div className="sticky top-0 z-500 bg-white shadow-md grid grid-flow-col px-4 py-3 items-center">
+        <div className="sticky top-0 z-500 bg-white shadow-md grid grid-flow-col px-4 py-3 items-center justify-between">
             <div className="flex col-span-1 items-center gap-x-6">
                 <RxHamburgerMenu className="text-xl cursor-pointer" onClick={handleToggleMenu} />
                 <a onClick={() => window.location.href = "/"}>
@@ -54,7 +54,7 @@ const Header = () => {
                     </div>
                 </a>
             </div>
-            <div className="col-span-10 flex flex-col items-center justify-center">
+            <div className="hidden col-span-10 sm:flex flex-col items-center justify-center">
                 <div className="flex w-full justify-center items-center">
                     <input
                         type="text"

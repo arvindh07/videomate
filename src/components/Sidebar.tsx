@@ -9,7 +9,7 @@ const Sidebar = () => {
   if(!isMenuOpen) return null;
 
   return (
-    <div className="col-span-1 max-w-[120px]">
+    <div className="hidden sm:block col-span-1 max-w-[120px]">
       {sidebarlist?.map((item) => {
         return (
           <div key={item.name} className="p-2 mx-2 flex flex-col items-center mt-3 hover:bg-black/30 cursor-pointer rounded-lg">

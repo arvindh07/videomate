@@ -8,7 +8,7 @@ const Body = () => {
   return (
     <div className="grid grid-flow-col">
       <Sidebar />
-      <div className="flex flex-col items-start justify-start col-span-11 mt-4">
+      <div className="flex flex-col items-start mx-2 sm:mx-4 justify-start col-span-11 mt-4">
         <Outlet />
       </div>
     </div>

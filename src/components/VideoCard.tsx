@@ -9,9 +9,9 @@ const VideoCard = ({ info }: any) => {
     const date = new Date(publishedAt);
 
     return (
-        <Link to={"/watch?v=" + info?.id} className='m-2 mb-4 h-fit'>
-            <div className="max-w-[350px] cursor-pointer">
-                <img src={thumbnails?.maxres?.url} alt="thumbnail"
+        <Link to={"/watch?v=" + info?.id} className='m-2 mb-4 h-fit sm:min-w-[max(350px, auto)] hover:scale-[1.03] transition-all'>
+            <div className="w-full cursor-pointer">
+                <img src={thumbnails?.maxres?.url || thumbnails?.medium?.url} alt="thumbnail"
                     className="w-full rounded-lg" />
                 <div className='flex gap-x-2 pt-3'>
                     <img
